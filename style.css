@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    background: linear-gradient(0deg,
+            rgb(199, 223, 252),
+            rgb(56, 94, 148),
+            rgb(0, 0, 0));
+
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+}
+
+body {
+    position: absolute;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1.welcome {
+    font-size: 80px;
+    color: white;
+    margin: 25vh auto 0;
+    transition: opacity 1s;
+}
+
+#description {
+    color: white;
+    margin: 3vh auto;
+    max-width: 600px;
+}
+
+h2.sameTemp {
+    margin: 10vh auto 0;
+}
+
+h3.cityResult {
+    margin: 3vh auto;
+    font-size: 70px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div.enterZipCode {
+    margin: 10vh auto 0;
+}
+
+#labelDiv {
+    display: inline-block;
+}
+
+#zipCodeDiv {
+    display: inline-block;
+}
+
+#error {
+    font-size: 20px;
+    color: rgb(255, 230, 0);
+    opacity: 60%;
+    display: inline-block;
+}
+
+.stepsContainer {
+    text-align: center;
+}
+
+.steps {
+    text-align: left;
+    font-size: 30px;
+    line-height: 50pt;
+    display: inline-block;
+    margin: auto;
+}
+
+label {
+    color: white;
+    padding-top: 5vh;
+    margin: 30vh auto;
+}
+
+input {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-style: hidden;
+    border-radius: 3px;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: white;
+    height: 40px;
+    padding: 8px;
+    width: 120px;
+}
+
+div.continue {
+    width: auto;
+}
+
+#submit {
+    bottom: 10vh;
+    margin: 5vh auto;
+    width: 200px;
+    border: 1px solid rgb(1, 44, 138);
+    border-radius: 7px;
+    color: white;
+    font-size: 40px;
+    background-color: rgb(6, 32, 88);
+    text-align: center;
+    box-shadow: 1px 1px 2px black;
+}
+
+#submit:hover {
+    opacity: 90%;
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+#submit:active:hover {
+    opacity: 50%;
+}
+
+#byline {
+    position: fixed;
+    color: white;
+    font-size: 20px;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Below the css applies to the search result page. */
+
+h1.sameTemp {
+    margin: 20vh auto 0;
+}
+
+h3.cityResult {
+    margin: 1vh auto;
+    font-size: 70px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+img {
+    height: 35vh;
+    width: auto;
+    margin: 3vh auto 0;
+    border-radius: 15px;
+    opacity: 0%;
+    transition: opacity 0.1s;
+}
+
+img:hover {
+    opacity: 85% !important;
+}
+
+#tempInfo {
+    margin: 5vh auto 0;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+span.info {
+    font-weight: bold;
+}
+
+#wikiHolder {
+    text-align: center;
+    width: 300px;
+    display: fixed;
+    margin: 5vh 0 0 calc(48vw - 350px);
+}
+
+#backButton {
+    position: fixed;
+    bottom: 8vh;
+    left: calc(50vw - 50px);
+    width: 100px;
+    border: 1px solid rgb(1, 44, 138);
+    border-radius: 7px;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(6, 32, 88);
+    text-align: center;
+    box-shadow: 1px 1px 2px black;
+}
+
+#backButton:hover {
+    opacity: 90%;
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+.hover {
+    opacity: 90%;
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+/* All animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translate(0, 15vh);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.skip-anim {
+    animation-duration: 1ms !important;
+    animation-fill-mode: forwards !important;
+}
+
+.anim1 {
+    animation: fadeIn 1s, slideUp 1s ease 2s;
+    animation-fill-mode: both;
+}
+
+.anim2 {
+    animation: fadeIn 1s ease 1s, slideUp 1s ease 2s;
+    animation-fill-mode: both;
+}
+
+.anim3 {
+    animation: fadeIn 1s ease 3s;
+    animation-fill-mode: both;
+}
+
+.anim4 {
+    animation: fadeIn 2s ease 4s;
+    animation-fill-mode: both;
+}
+
+/* searchResult.html animations */
+.anim5 {
+    animation: fadeIn 1s,
+        slideUp 1s ease 3s;
+    animation-fill-mode: both;
+}
+
+.anim6 {
+    animation: fadeIn 1s ease 1.5s,
+        slideUp 1s ease 3s;
+    animation-fill-mode: both;
+}
+
+.anim7 {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+}
+
+.anim8 {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 5s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 1s;
+}
+
+
+
+
+

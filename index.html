@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staycation Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link id="myCSS" rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="content">
+      <div class="welcome">
+        <h1 class="welcome anim1" id="welcome">StaycationAid</h1>
+      </div>
+      <div class="description">
+        <h2 class="anim2" id="description">
+          Take an imaginary vacation in just three steps:
+        </h2>
+      </div>
+      <div class="stepsContainer anim3">
+        <div class="steps">
+          <ol>
+            <li>
+              <div id="form" autocomplete="off">
+                <div id="labelDiv">
+                  <label for="location"> Enter your ZIP code: </label>
+                </div>
+                <div id="zipCodeDiv">
+                  <input
+                    type="text"
+                    name="zipCode"
+                    id="zipCode"
+                    autocomplete="chrome-off"
+                    minlength="5"
+                    maxlength="5"
+                    pattern="\d\d\d\d\d"
+                    autofocus
+                    oninvalid="this.setCustomValidity('Please enter a valid ZIP code.')"
+                    oninput="this.setCustomValidity('')"
+                    required
+                  />
+                </div>
+                <div id="error"></div>
+              </div>
+            </li>
+            <li>Find out where in the world has similar weather.</li>
+            <li>Step outside, close your eyes, and imagine you're there!</li>
+          </ol>
+        </div>
+      </div>
+      <div class="continue anim4">
+        <button type="submit" value="submit" id="submit" class="submit">
+          Submit
+        </button>
+      </div>
+      <div id="byline">
+        <p>Concept and code by Timothy Ruszala, 2021</p>
+      </div>
+    </div>
+    <script src="/getWeatherKopie.js"></script>
+    <script src="showImage.js"></script>
+  </body>
+</html>
