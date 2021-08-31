@@ -54,7 +54,6 @@ function getCitiesArray(numOfCities) {
         ['Mumbai', 'IN'],
         ['Manila', 'PH'],
         ['Shanghai', 'CN'],
-        ['Sao Paulo', 'BR'],
         ['Seoul', 'KR'],
         ['Mexico City', 'MX'],
         ['Guangzhou', 'CN'],
@@ -169,6 +168,8 @@ function findClosestTemp(targetT, cityTemps) {
     let currentBestCity = [];
     for (let city of cityTemps) {
         const tempDiff = Math.abs(targetT - city.value[2]);
+        // console.log("target: ", targetT, "currentBest: ", currentBestCity, "compare: ", city.value);
+
         if (tempDiff < bestTempDiff) {
             currentBestCity = city.value;
             bestTempDiff = tempDiff;
@@ -243,7 +244,8 @@ function generateWikipediaLink(cityName) {
 getWeatherPromise = function (query) {
     console.log('Searching...');
 
-    getCitiesArray(50).then((cities) => {
+    getCitiesArray(100).then((cities) => {
+        console.log("Number of cities being searched: ", cities.length);
         let tempProms = [];
         tempProms.push(getTempByZipCode(query));
         for (const city of cities) {
@@ -293,7 +295,6 @@ window.addEventListener('load', () => {
     let btn = document.getElementById('submit');
     btn.addEventListener('click', () => {
         let zip = document.getElementById('zipCode');
-        // console.log(zip.value);
         getWeatherPromise(zip.value);
     });
     window.addEventListener('keydown', (e) => {
