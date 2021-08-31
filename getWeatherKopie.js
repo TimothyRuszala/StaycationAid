@@ -30,7 +30,7 @@ function getTempByCity(city, countryCode) {
             if (xhr.status === 200) {
                 const weather = JSON.parse(xhr.responseText);
                 const qTemp = KelvToFahr(weather.main.temp);
-                console.log(city, countryCode, qTemp);
+                // console.log(city, countryCode, qTemp);
                 resolve([city, countryCode, qTemp]);
             } else {
                 reject(xhr.status);
@@ -177,14 +177,6 @@ function findClosestTemp(targetT, cityTemps) {
     return currentBestCity;
 }
 
-// function printPromise(prom, name = "") {
-//     prom.then((r) => {
-//         console.log(name, r);
-//     }).catch((e) => {
-//         console.log(`Error with printPromise`);
-//     });
-// }
-
 function getNewHtml(qCity, qTemp, newCity, newTemp) {
     let xhr = new XMLHttpRequest();
     xhr.onload = () => {
@@ -213,7 +205,6 @@ function getNewHtml(qCity, qTemp, newCity, newTemp) {
                 });
                 window.addEventListener('keyup', (e) => {
                     if (e.key !== "Enter") return;
-                    console.log('enter => click');
                     backButton.classList.remove('hover');
                     backButton.click();
                 }, false);
@@ -252,14 +243,14 @@ function generateWikipediaLink(cityName) {
 getWeatherPromise = function (query) {
     console.log('Searching...');
 
-    getCitiesArray(10).then((cities) => {
+    getCitiesArray(50).then((cities) => {
         let tempProms = [];
         tempProms.push(getTempByZipCode(query));
         for (const city of cities) {
             tempProms.push(getTempByCity(city[0], city[1]));
         }
         let promAll = Promise.allSettled(tempProms).catch(e => {
-            console.log("e:", e);
+            console.log("Error: ", e);
         });
         return promAll;
     }).then(cityTemps => {
@@ -267,7 +258,7 @@ getWeatherPromise = function (query) {
             let qTemp = cityTemps[0].value[1]; //the array indices aren't very revealling... this is the temp.
             let searchTemps = cityTemps.slice(1, cityTemps.length);
             let closestTemp = findClosestTemp(qTemp, searchTemps);
-            console.log("closestTemp:", closestTemp, "(queryTemp: ", qTemp, ")");
+            // console.log("closestTemp:", closestTemp, "(queryTemp: ", qTemp, ")");
             getNewHtml(query, qTemp.toFixed(), closestTemp[0], closestTemp[2].toFixed());
             resolve(closestTemp);
         });
@@ -302,7 +293,7 @@ window.addEventListener('load', () => {
     let btn = document.getElementById('submit');
     btn.addEventListener('click', () => {
         let zip = document.getElementById('zipCode');
-        console.log(zip.value);
+        // console.log(zip.value);
         getWeatherPromise(zip.value);
     });
     window.addEventListener('keydown', (e) => {
@@ -313,7 +304,7 @@ window.addEventListener('load', () => {
         if (e.key !== "Enter") return;
         btn.classList.remove('hover');
         e.preventDefault();
-        console.log('default Prevented');
+        // console.log('default Prevented');
         btn.click();
     });
 });
