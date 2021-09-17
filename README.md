@@ -1,4 +1,4 @@
-# TimothyRuszala.github.io
+# StaycationAid
 
 StaycationAid is a small web app that I designed to put together everything I learned about web development so far. 
 
