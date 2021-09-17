@@ -4,70 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StaycationAid</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
-      rel="stylesheet"
-    />
-    <link id="myCSS" rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="website.css" />
+    <title>Document</title>
   </head>
   <body>
-    <div id="content">
-      <div class="welcome">
-        <h1 class="welcome anim1" id="welcome">StaycationAid</h1>
-      </div>
-      <div class="description">
-        <h2 class="anim2" id="description">
-          Take an imaginary vacation in just three steps:
-        </h2>
-      </div>
-      <div class="stepsContainer anim3">
-        <div class="steps">
-          <ol>
-            <li>
-              <div id="form" autocomplete="off">
-                <div id="labelDiv">
-                  <label for="location"> Enter your ZIP code: </label>
-                </div>
-                <div id="zipCodeDiv">
-                  <input
-                    type="text"
-                    name="zipCode"
-                    id="zipCode"
-                    autocomplete="chrome-off"
-                    minlength="5"
-                    maxlength="5"
-                    pattern="\d\d\d\d\d"
-                    autofocus
-                    oninvalid="this.setCustomValidity('Please enter a valid ZIP code.')"
-                    oninput="this.setCustomValidity('')"
-                    required
-                  />
-                </div>
-                <div id="error"></div>
-              </div>
-            </li>
-            <li>Find out where in the world has similar weather.</li>
-            <li>Step outside, close your eyes, and imagine you're there!</li>
-          </ol>
+    <div class="content">
+      <!-- <header></header>
+    <nav></nav> -->
+      <div id="topScreen">
+        <div class="hello">
+          <h1>
+            Hi! <br />
+            I'm Tim.
+          </h1>
         </div>
+        <!-- <img class="me" src="tempPhoto.jpg" /> -->
+        <a href="#bioScreen">
+          <div class="scrollButton topScreen readBio">Read my bio...</div>
+        </a>
+        <a href="#projectsScreen">
+          <div class="scrollButton topScreen seeProjects">
+            See my projects...
+          </div>
+        </a>
       </div>
-      <div class="continue anim4">
-        <button type="submit" value="submit" id="submit" class="submit">
-          Submit
-        </button>
+      <div id="bioScreen">
+        <h2>Who am I?</h2>
+        <div id="bio">
+          <p>
+            <strong
+              ><em
+                >I'm Tim Ruszala, and I'm an aspiring software developer.</em
+              ></strong
+            >
+            I graduated from Princeton summa cum laude with a musicology (!)
+            degree, but I've since decided to channel my creative energies into
+            computers, and a few bucks along the way. ; ) <br />
+            <br />On this website you'll find a few projects that I've made for
+            fun to consolidate what I've learned, mostly written in Python,
+            Java, and HTML/CSS/Javascript. I hope you'll enjoy looking at them
+            as much as I enjoyed making them!
+          </p>
+        </div>
+        <a href="#topScreen">
+          <div class="scrollButton bioScreen home">Back to the top...</div>
+        </a>
+        <a href="#projectsScreen">
+          <div class="scrollButton bioScreen seeProjects">
+            See my projects...
+          </div>
+        </a>
       </div>
-      <div id="byline">
-        <p>Concept and code by Timothy Ruszala, 2021</p>
+      <div id="projectsScreen">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <div class="hoverBox">
+              <a target="_blank" href="/StaycationAid/staycationAid.html"
+                >StaycationAid</a
+              >
+            </div>
+            <div class="projInfo">
+              <img src="Images/StaycationAid.png" />
+              <p>
+                A small web app which asks for your location, then shows you a
+                city experiencing the same current temperature.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="hoverBox">
+              <a
+                target="_blank"
+                href="https://github.com/TimothyRuszala/TowerOfDoom"
+                >Apocalypse Machine</a
+              >
+            </div>
+            <div class="projInfo">
+              <img src="Images/TowerOfDoom.png" />
+              <p>
+                Visualizes the recursive solution to a Towers of Hanoi puzzle
+                using 64 discs. This program will take nearly six hundred
+                million years to complete.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <a href="#topScreen">
+          <div class="scrollButton projectsScreen home">Back to the top...</div>
+        </a>
+        <a href="#bioScreen">
+          <div class="scrollButton projectsScreen readBio">Read my bio...</div>
+        </a>
       </div>
     </div>
-    <script src="/getWeather.js"></script>
-    <script src="showImage.js"></script>
+    <footer></footer>
   </body>
 </html>
