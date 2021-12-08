@@ -1,7 +1,7 @@
 # StaycationAid
 
-StaycationAid is a small web app that I designed to put together everything I learned about web development so far. 
+## About
 
-Enter a US Zipcode, and the app will show you a city in the world which is currently experiencing the same temperature.
+StaycationAid is a web app which connects weather patterns from around the globe. Simply enter a U.S. ZIP-code, and StaycationAid will show you a city in the world which is currently experiencing the same temperature.
 
-Please don't try this with a small screen. <3
+URL: http://timruszala.com/StaycationAid/
